@@ -1,9 +1,25 @@
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
+import HomePage from "./pages/HomePage";
+import LoginPage from "./pages/LoginPage";
+import NotFoundPage from "./pages/NotFoundPage";
+import ProfilePage from "./pages/ProfilePage";
+import RegistrationPage from "./pages/RegistrationPage";
+import PrivateRoutes from "./routes/PrivateRoutes";
 
 function App() {
     return (
         <>
-            <h1>create yopur best app</h1>
+            <Routes>
+                <Route element={<PrivateRoutes />}>
+                    <Route element={<HomePage />} path="/" exact />
+                    <Route element={<ProfilePage />} path="/me" />
+                </Route>
+                <Route element={<LoginPage />} path="/login" />
+                <Route element={<RegistrationPage />} path="/registration" />
+                <Route element={<ProfilePage />} path="/me" />
+                <Route element={<NotFoundPage />} path="*" />
+            </Routes>
         </>
     );
 }
