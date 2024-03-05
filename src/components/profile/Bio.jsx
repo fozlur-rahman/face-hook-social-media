@@ -1,13 +1,14 @@
 import { useState } from "react";
-import { api } from "../../api/index";
 import CheckIcon from "../../assets/icons/close.svg";
 import EditIcon from "../../assets/icons/edit.svg";
 import useProfile from "../../hooks/useProfile";
 
 import { actions } from "../../actions";
+import { useAxios } from "../../hooks/useAxios";
 
 const Bio = () => {
     const { state, dispatch } = useProfile();
+    const { api } = useAxios();
     const [bio, setBio] = useState(state?.user?.bio);
     const [editMode, setEditMode] = useState(false);
 

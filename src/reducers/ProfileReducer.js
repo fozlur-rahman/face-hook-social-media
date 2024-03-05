@@ -34,6 +34,17 @@ const ProfileReducer = (state, action) => {
             };
         }
 
+        case actions.profile.IMAGE_UPDATED: {
+            return {
+                ...state,
+                loading: false,
+                user: {
+                    ...action.data,
+                    avatar: action.data.avatar,
+                },
+            };
+        }
+
         case actions.profile.DATA_FETCH_ERROR: {
             return {
                 ...state,

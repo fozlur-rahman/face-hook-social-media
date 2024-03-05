@@ -1,24 +1,17 @@
-import EditIcon from "../../assets/icons/edit.svg";
+import { useAxios } from "../../hooks/useAxios";
 import useProfile from "../../hooks/useProfile";
 import Bio from "./Bio";
+import ProfileImage from "./ProfileImage";
 
 const UserProfileInfo = () => {
     const { state } = useProfile();
+    const { api } = useAxios();
     const user = state?.user;
     return (
         <div className="flex flex-col items-center py-8 text-center">
             {/* <!-- profile image --> */}
-            <div className="relative mb-8 max-h-[180px] max-w-[180px] rounded-full lg:mb-11 lg:max-h-[218px] lg:max-w-[218px]">
-                <img
-                    className="max-w-20 rounded-full max-h-20 bg-white"
-                    src={`${import.meta.env.VITE_SERVER_BASE_URL}/${user?.avatar}`}
-                    alt={user?.firstName}
-                />
+            <ProfileImage />
 
-                <button className="flex-center absolute bottom-4 right-4 h-7 w-7 rounded-full bg-black/50 hover:bg-black/80">
-                    <img src={EditIcon} alt="Edit" />
-                </button>
-            </div>
             {/* <!-- name , email --> */}
             <div>
                 <h3 className="text-2xl font-semibold text-white lg:text-[28px]">

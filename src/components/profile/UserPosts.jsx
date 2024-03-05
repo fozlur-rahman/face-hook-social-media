@@ -3,7 +3,7 @@ import useProfile from "../../hooks/useProfile";
 
 const UserPosts = () => {
     const { state } = useProfile();
-    console.log(state?.userPost);
+    // console.log(state?.userPost);
     return (
         <article className="card mt-6 lg:mt-8">
             {/* <!-- post header --> */}
