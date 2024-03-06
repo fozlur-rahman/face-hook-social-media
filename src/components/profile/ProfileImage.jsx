@@ -6,7 +6,7 @@ import useProfile from "../../hooks/useProfile";
 
 const ProfileImage = () => {
     const { state, dispatch } = useProfile();
-    console.log(state?.user?.avatar);
+
     const { api } = useAxios();
 
     const fileRef = useRef();

@@ -52,8 +52,6 @@ const ProfilePage = () => {
                     <UserProfileInfo />
                     {/* <!-- end profile info --> */}
 
-                    <h4 className="mt-6 text-xl lg:mt-8 lg:text-2xl">Your Posts</h4>
-
                     {/* <!-- post  --> */}
                     <UserPosts />
                     {/* <!-- post ends --> */}
