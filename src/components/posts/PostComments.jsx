@@ -35,12 +35,11 @@ const PostComments = ({ post }) => {
                 </button>
             </div>
             {/* <!-- comments --> */}
-            <PostCommentList postComment={post?.comments} />
+            {showComment && <PostCommentList postComment={post?.comments} />}
+
             {/* <!-- comments ends --> */}
         </div>
     );
 };
 
 export default PostComments;
-
-
